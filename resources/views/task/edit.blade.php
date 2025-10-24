@@ -6,6 +6,11 @@
         <div class="col-md-8">
 
             <div class="card shadow-sm">
+                 @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 <div class="card-header bg-primary text-white">
                     تعديل المهمة
                 </div>
@@ -52,6 +57,15 @@
 
                             @error('status')
                                 <div class="text-danger small mt-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                                         <div class="mb-3">
+                            <label for="data" class="form-label">تاريخ المهمة</label>
+                            <input type="date" name="data" id="data"
+                                   value="{{ old('data',$task->data) }}"
+                                   class="form-control @error('data') is-invalid @enderror" >
+                            @error('data')
+                                <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 

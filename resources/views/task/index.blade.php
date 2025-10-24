@@ -8,9 +8,9 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                   @if (session('success'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            {{ session('success') }}
                         </div>
                     @endif
 
@@ -23,8 +23,8 @@
                         <div class="col-md-4">
                             <select name="status" class="form-select">
                                 <option value="">كل الحالات</option>
-                                <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>نشط</option>
-                                <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>غير نشط</option>
+                                <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>completed</option>
+                                <option value="0" {{ request('status') == '0' ? 'selected' : '' }}>overdue</option>
                             </select>
                         </div>
 

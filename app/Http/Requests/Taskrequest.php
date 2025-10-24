@@ -22,7 +22,6 @@ class Taskrequest extends FormRequest
    
     public function rules(): array
     {
-        $isUpdate = in_array($this->method(), ['PUT', 'PATCH']);
 
         return [
             'title' => 'required|string|max:255',

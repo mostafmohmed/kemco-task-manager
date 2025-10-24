@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Taskmange;
+use App\Http\Controllers\TaskmangeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +26,6 @@ Route::middleware(['auth'])->group(function () {
     // ✅ صفحة لوحة التحكم
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/tasks',Taskmange::class)->middleware('auth');
+Route::resource('/tasks',TaskmangeController::class)->middleware('auth');
 
 });

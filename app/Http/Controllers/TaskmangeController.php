@@ -9,7 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Taskmange extends Controller
+class TaskmangeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -83,7 +83,6 @@ $validated['user_id']=Auth::id();
     if (!$request->has('user_id')) {
         $validated['user_id'] = $task->user_id;
     }
-
     $task->update($validated);
 
     return redirect()->route('tasks.index')->with('success', 'تم تحديث المهمة بنجاح ✅');
