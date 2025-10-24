@@ -18,7 +18,7 @@
                             <label for="title" class="form-label">عنوان المهمة</label>
                             <input type="text" name="title" id="title"
                                    value="{{ old('title') }}"
-                                   class="form-control @error('title') is-invalid @enderror" required>
+                                   class="form-control @error('title') is-invalid @enderror" >
                             @error('title')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <label for="status" class="form-label">الحالة</label>
                             <select name="status" id="status"
-                                    class="form-select @error('status') is-invalid @enderror" required>
+                                    class="form-select @error('status') is-invalid @enderror" >
                                 <option value="1" {{ old('status') == '1' ? 'selected' : '' }}>completed</option>
                                 <option value="0" {{ old('status') == '0' ? 'selected' : '' }}>overdue</option>
                             </select>
@@ -69,7 +69,7 @@
                             <label for="data" class="form-label">تاريخ المهمة</label>
                             <input type="date" name="data" id="data"
                                    value="{{ old('data') }}"
-                                   class="form-control @error('data') is-invalid @enderror" required>
+                                   class="form-control @error('data') is-invalid @enderror" >
                             @error('data')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
